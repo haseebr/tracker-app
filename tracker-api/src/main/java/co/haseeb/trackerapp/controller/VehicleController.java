@@ -3,6 +3,8 @@ package co.haseeb.trackerapp.controller;
 import co.haseeb.trackerapp.entity.Vehicle;
 import co.haseeb.trackerapp.service.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,8 +18,8 @@ public class VehicleController {
     private VehicleService vehicleService;
 
     @GetMapping
-    public List<Vehicle> allVehicles() {
-        return vehicleService.findAll();
+    public Page<Vehicle> allVehicles(Pageable pageable) {
+        return vehicleService.findAll(pageable);
     }
 
     @PutMapping

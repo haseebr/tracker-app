@@ -5,6 +5,7 @@ import co.haseeb.trackerapp.entity.Priority;
 import co.haseeb.trackerapp.repository.AlertRepository;
 import co.haseeb.trackerapp.service.AlertService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -34,7 +35,7 @@ public class AlertServiceImpl implements AlertService {
     }
 
     @Override
-    public List<Alert> findByPriorityAndTimeBetween(Priority priority, Date startTime, Date endTime, Pageable pageable) {
+    public Page<Alert> findByPriorityAndTimeBetween(Priority priority, Date startTime, Date endTime, Pageable pageable) {
         return alertRepository.findByPriorityAndTimeBetween(priority, startTime, endTime, pageable);
     }
 }

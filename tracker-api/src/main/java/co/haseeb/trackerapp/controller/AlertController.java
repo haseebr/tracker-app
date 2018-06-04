@@ -5,6 +5,7 @@ import co.haseeb.trackerapp.entity.Priority;
 import co.haseeb.trackerapp.exceptions.BadRangeException;
 import co.haseeb.trackerapp.service.AlertService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +22,7 @@ public class AlertController {
     private AlertService alertService;
 
     @GetMapping
-    public List<Alert> findByPriorityAndTimeBetween(@RequestParam("priority") Priority priority,
+    public Page<Alert> findByPriorityAndTimeBetween(@RequestParam("priority") Priority priority,
                                                     @RequestParam("start") @Nullable String start,
                                                     @RequestParam("end") @Nullable String end, Pageable pageable) {
 
