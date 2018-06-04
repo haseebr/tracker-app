@@ -6,14 +6,13 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import java.util.Date;
-import java.util.List;
 
 public interface AlertService {
     public void save(Alert alert);
 
     public Page<Alert> findByPriorityAndTimeBetween(Priority priority, Date startTime, Date endTime, Pageable pageable);
 
-    public List<Alert> findByVin(String vin);
+    public Page<Alert> findByVin(String vin, Pageable pageable);
 
-    public List<Alert> findAll();
+    public Page<Alert> findAll(Pageable pageable);
 }

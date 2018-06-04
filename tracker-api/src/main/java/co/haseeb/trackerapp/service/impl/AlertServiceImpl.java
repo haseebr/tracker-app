@@ -10,7 +10,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
-import java.util.List;
 
 @Service
 public class AlertServiceImpl implements AlertService {
@@ -25,13 +24,13 @@ public class AlertServiceImpl implements AlertService {
     }
 
     @Override
-    public List<Alert> findByVin(String vin) {
-        return alertRepository.findByVin(vin);
+    public Page<Alert> findByVin(String vin, Pageable pageable) {
+        return alertRepository.findByVin(vin, pageable);
     }
 
     @Override
-    public List<Alert> findAll() {
-        return alertRepository.findAll();
+    public Page<Alert> findAll(Pageable pageable) {
+        return alertRepository.findAll(pageable);
     }
 
     @Override

@@ -11,7 +11,6 @@ import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
-import java.util.List;
 
 @RestController
 @CrossOrigin
@@ -49,12 +48,12 @@ public class AlertController {
     }
 
     @GetMapping(value = "{vin}")
-    public List<Alert> findByVin(@PathVariable("vin") String vin) {
-        return alertService.findByVin(vin);
+    public Page<Alert> findByVin(@PathVariable("vin") String vin, Pageable pageable) {
+        return alertService.findByVin(vin, pageable);
     }
 
     @GetMapping(value = "all")
-    public List<Alert> findAll() {
-        return alertService.findAll();
+    public Page<Alert> findAll(Pageable pageable) {
+        return alertService.findAll(pageable);
     }
 }
