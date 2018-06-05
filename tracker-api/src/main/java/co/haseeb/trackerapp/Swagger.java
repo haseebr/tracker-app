@@ -15,7 +15,7 @@ public class Swagger {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.any())
+                .apis(RequestHandlerSelectors.basePackage("co.haseeb.trackerapp"))
                 .paths(PathSelectors.any())
                 .build();
     }
