@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tracker App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        .row {
+            border-bottom: 1px solid lightgrey;
+            word-wrap: break-word;
+            /*text-align: center;*/
+        }
+    </style>
+</head>
+<body>
+<div class="container" style="width: 800px">
+    <div class="row">
+        <h1>Welcome to Tracker</h1>
+        <h2>Swagger URL: <a href="http://tracker.haseeb.co/swagger-ui.html">Swagger</a></h2>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"><b>Action</b></div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"><b>Sample URL</b></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">Vehicle by VIN /vehicles/{vin}</div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <a href="http://tracker.haseeb.co/vehicles/1HGCR2F3XFA027534" target="_blank">http://tracker.haseeb.co/vehicles/1HGCR2F3XFA027534</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">All Vehicles /vehicles</div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <a href="http://tracker.haseeb.co/vehicles" target="_blank">http://tracker.haseeb.co/vehicles</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">Alerts by Priority and Time Sort by Time DESC/alerts</div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <a href="http://tracker.haseeb.co/alerts?priority=MEDIUM&start=1528175820000&end=1528176000000&sort=time,desc"
+               target="_blank">http://tracker.haseeb.co/alerts?priority=MEDIUM&start=1528175820000&end=1528176000000&sort=time,desc</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">MEDIUM Alerts in last two hours /alerts</div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <a href="http://tracker.haseeb.co/alerts?priority=MEDIUM"
+               target="_blank">http://tracker.haseeb.co/alerts?priority=MEDIUM</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">All Alerts /alerts/all</div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <a href="http://tracker.haseeb.co/alerts/all"
+               target="_blank">http://tracker.haseeb.co/alerts/all</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">Readings Geolocation by Vehicle and Time /readings</div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <a href="http://tracker.haseeb.co/readings?vin=1HGCR2F3XFA027534&start=1528175820000&end=1528176000000">
+                http://tracker.haseeb.co/readings?vin=1HGCR2F3XFA027534&start=1528175820000&end=1528176000000</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">Readings default to last 30 mins if no start and end
+            parameters are passed /readings
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <a href="http://tracker.haseeb.co/readings?vin=1HGCR2F3XFA027534&start=1528175820000&end=1528176000000">
+                http://tracker.haseeb.co/readings?vin=1HGCR2F3XFA027534</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">All Readings /readings/all</div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <a href="http://tracker.haseeb.co/readings">
+                http://tracker.haseeb.co/readings</a>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
